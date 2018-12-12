@@ -12,9 +12,9 @@ import com.se.util.Paper;
 @Service
 public class NoticeService implements BoardService {
 	
-	/*@Inject
-	private NoticeDAO noticeDAO;*/
-/*
+	@Inject
+	private NoticeDAO noticeDAO;
+
 	@Override
 	public List<BoardDTO> list(Paper pager) throws Exception {
 	pager.makeRow();
@@ -46,5 +46,5 @@ public class NoticeService implements BoardService {
 		// TODO Auto-generated method stub
 		return noticeDAO.delete(num);
 	}
-*/
+
 }

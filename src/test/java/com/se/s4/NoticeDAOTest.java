@@ -73,7 +73,7 @@ public class NoticeDAOTest extends AbstractTestCase{
 	}
 	}
 	//@Test
-	public void listtest() {
+	/*public void listtest() {
 	List<BoardDTO> ar;
 	try {
 		ar = noticeDAO.list(1, 2, 11, "writer", "c");
@@ -82,7 +82,7 @@ public class NoticeDAOTest extends AbstractTestCase{
 		e.printStackTrace();
 	}
 	assertEquals(5, ar.size());
-	}
+	}*/
 	
 }
 

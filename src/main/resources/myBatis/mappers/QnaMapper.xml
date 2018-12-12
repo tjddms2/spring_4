@@ -49,7 +49,7 @@
 	   where R between #{startRow} and #{lastRow}
    </select>
   
-    <select id="select"  parameterType="java.lang.Intger" resultType="QnaDTO">
+    <select id="select"  parameterType="java.lang.Integer" resultType="QnaDTO">
    	select * from qna where num=#{num}
    </select> 
    

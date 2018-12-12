@@ -25,9 +25,9 @@ public class QnaController {
 		//list
 		@RequestMapping(value="qnaList")
 		public String List(Model model ,Paper pager)throws Exception {
-			model.addAttribute("board", "qna"); 
+			model.addAttribute("board", "qna");
 			List<BoardDTO> ar = qnaService.list(pager);
-			model.addAttribute("list", ar);																//보내주는건 list,ar
+			model.addAttribute("list", ar);
 			model.addAttribute("pager", pager);
 			return "board/boardList";
 		}
@@ -39,17 +39,17 @@ public class QnaController {
 			BoardDTO boardDTO = qnaService.select(num);
 			
 			String path="";
-			if(boardDTO != null) {																		//이번호가 있는지 없는지
-			path = "board/boardSelect";
-			model.addAttribute("dto", boardDTO);
+			if(boardDTO != null) {
+				path = "board/boardSelect";
+				model.addAttribute("dto", boardDTO);
 			}else {
-				path="redirect: ./qnaList";																//foward->redirect
-				rd.addFlashAttribute("msg", "존재 안하지롱");
-			}																							//1.절대경로 2.상대경로
+				path ="redirect:./qnaList";
+				rd.addFlashAttribute("msg", "해당글이 존재 하지 않습니다.");
+			}																			//1.절대경로 2.상대경로
 			return path;
 		}
 		
-		//insert Form
+		//write Form
 		@RequestMapping(value="qnaWrite",method=RequestMethod.GET)
 		public String Write(Model model) {
 			model.addAttribute("board", "qna");
@@ -61,9 +61,9 @@ public class QnaController {
 			/*System.out.println("write:"+boardDTO.getTitle());*/ 
 			int result =qnaService.insert(boardDTO);												//실패했을때, 리다이넥트로 메세지 주기
 			if(result<1) {
-				rd.addFlashAttribute("msg", "글쓰기 실패했다고~");
+				rd.addFlashAttribute("msg", "Write Fail");
 			}
-			return "redirect:./qnaLsit ";
+			return "redirect:./qnaList";
 		}
 		
 		//update form
@@ -80,7 +80,7 @@ public class QnaController {
 			/*System.out.println("update:"+boardDTO.getTitle());*/
 			int result =qnaService.update(boardDTO);
 			if(result<1) {
-				rd.addFlashAttribute("msg", "업데이트 실ㅍ ㅐㅋ");
+				rd.addFlashAttribute("msg", "Update Fail");
 			}
 			return "redirect:./qnaSelect?num="+boardDTO.getNum();
 		}
@@ -91,7 +91,7 @@ public class QnaController {
 		/*System.out.println("Delete:"+num);*/
 			int result = qnaService.delete(num);							//파라미터 넘을 보내고
 			if(result<1) {
-				rd.addFlashAttribute("msg", "삭제 실패ㅋ");
+				rd.addFlashAttribute("msg", "Delete Fail");
 			}
 		return "redirect:./qnaList";
 		}

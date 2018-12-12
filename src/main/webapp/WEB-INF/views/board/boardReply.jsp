@@ -7,13 +7,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>${board}Reply</h1>
+<h1>${board} Reply</h1>
 
-<form action="./${board}Update" method="Post">
+<form action="./${board}reply" method="Post">
 <input type="hidden" name="num" value="${num}">
-	Title : <input type="text" name="title">
-	writer : <input type="text" name="writer">
-	Contents : <textarea  name="Contents" rows="" cols=""></textarea>
+	<input type="text" name="title">
+	<input type="text" name="writer">
+	<textarea  name="Contents" rows="" cols=""></textarea>
 	<button>Reply</button>
 </form>
 </body>

@@ -14,7 +14,14 @@
 	<input type="text" name="title">	
 	<input type="text" name="writer">
 	<textarea rows="" cols="" name="contents"></textarea>
-	<button>WRITER</button>
+	<input type="button" value="ADD">
+		<div id="files">
+		<div>
+			<input type="file" name="f1"><span>X</span>
+			<input type="file" name="f1"><span>X</span>	
+		</div>
+		</div>
+		<button>write</button>
 	</form>
 
 </body>

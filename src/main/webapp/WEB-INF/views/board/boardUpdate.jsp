@@ -13,7 +13,7 @@
 	<input type="text" name="title" value="${dto.title}">
 	<input type="text" name="writer" value="${dto.writer}">
 	<textarea name="Contents" rows="" cols="">${dto.contents}</textarea>
-	<button>Write</button>
+	<button>update</button>
 </form>
 
 </body>

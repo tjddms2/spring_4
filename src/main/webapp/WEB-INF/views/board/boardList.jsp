@@ -11,13 +11,10 @@ var msg='${msg}';		//데이터가 있을때,
 if(msg !=''){
 	alert(msg);
 }
-
 </script>
 </head>
 <body>
-		
 	<h1>${board}List</h1>
-	
 	
 	<table>
 		<tr>

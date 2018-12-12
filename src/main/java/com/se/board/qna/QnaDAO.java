@@ -24,6 +24,12 @@ public class QnaDAO implements BoardDAO {
 	private final String NAMESPACE="qnaMapper.";
 	//바뀌지 않는 
 	
+
+	@Override
+	public int totalCount(Paper pager) throws Exception {
+		return sqlsession.selectOne(NAMESPACE+"totalCount", pager);
+	}
+	
 	@Override
 	public List<BoardDTO> list(Paper pager) throws Exception {
 		return sqlsession.selectList(NAMESPACE+"list", pager);
@@ -49,10 +55,6 @@ public class QnaDAO implements BoardDAO {
 		return sqlsession.delete(NAMESPACE+"delete", num);
 	}
 
-	@Override
-	public int totalCount(Paper pager) throws Exception {
-		return sqlsession.selectOne(NAMESPACE+"totalCount", pager);
-	}
 	//답글작성
 	public int reply(QnaDTO qnaDTO) throws Exception{
 		return sqlsession.insert(NAMESPACE+"reply", qnaDTO);
